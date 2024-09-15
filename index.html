@@ -62,9 +62,12 @@
               </span>
                <span class="author-block">
                 <a href="" target="_blank">Pranjal&nbsp;Paul</a><sup>1</sup>, </span>
-              </span>     
+              </span>   
+               <span class="author-block">
+                <a href="" target="_blank">Pawan&nbsp;Wadhwani</a><sup>1</sup>, </span>
+              </span>   
               <span class="author-block">
-                <a href="" target="_blank">Brojeshwar&nbsp;Bhowmik</a><sup>3</sup>, </span>
+                <a href="" target="_blank">Brojeshwar&nbsp;Bhowmick</a><sup>3</sup>, </span>
               </span>     
               <span class="author-block">
                 <a href="" target="_blank">Arun&nbsp;Singh</a><sup>3</sup>,
@@ -84,7 +87,7 @@
               <!-- <span class="author-block"><sup>2</sup>Cornell Tech, Cornell University &nbsp; </span> -->
             </div>
 
-            <h1 style="font-size:16px;font-weight:bold">Under Review at ICRA, 2024</h1>
+            <h1 style="font-size:16px;font-weight:bold">Under Review at ICRA, 2025</h1>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -99,7 +102,7 @@
                 </a>
               </span> -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2309.11414#:~:text=1)%20We%20propose%20GPD%2C%20an,scene%2Dspecific%20cost%20guidance%20directly"
+                  <a href=""
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -175,33 +178,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Classical motion planning for robotic manipulation includes a set of general algorithms that aim to
-              minimize
-              a scene-specific cost of executing a given plan to generate a
-              potentially valid collision-free trajectory. This approach offers
-              remarkable adaptability, as they can be directly used for any
-              new scene without needing specific training datasets. However,
-              without a prior understanding of what diverse valid trajectories
-              are and without specially designed cost functions for a given
-              scene, the overall solutions tend to have low success rates.
-              While deep-learning-based algorithms tremendously improve
-              success rates, they are much harder to adopt without specialized
-              training datasets. We propose GPD, an Ensemble-of-costs-
-              guided Diffusion for Motion Planning that aims to combine the
-              strengths of classical and deep-learning-based motion planning.
-              Our diffusion-based network is trained on a set of diverse
-              general valid trajectories enabling the model to implicitly learn
-              the properties of a valid trajectory. Like classical planning, for
-              any new scene at the time of inference, we compute collision
-              costs and incorporate this cost at each timestep of the diffusion
-              network to generate valid collision-free trajectories. Instead of
-              a single collision cost that may be insufficient in capturing
-              diverse cues across scenes, we use an ensemble of collision
-              costs to guide the diffusion process, significantly improving
-              the success rate compared to classical planners. As we show
-              in our experiments, GPD outperforms SOTA deep-learning-
-              based methods in most cases while retaining the generalization
-              capabilities primarily associated with classical planners
+             Abstract goes here
             </p>
           </div>
         </div>
@@ -213,7 +190,7 @@
         <div class="container is-max-desktop">
 
           <div class="columns is-centered has-text-centered">
-            <h2 class="title is-3">Ensemble of costs guided diffusion</h2>
+            <h2 class="title is-3">Guided Polynomial Diffusion</h2>
 
           </div>
         </div>
@@ -429,7 +406,7 @@
       <h3 class="title is-3">Acknowledgements</h3>
       <div class="content has-text-justified">
         <p>
-          We would like to thank Adam Fishman for assisting with MπNets and providing valuable insights into collision checking and benchmarking.
+          adcEawf
         </p>
       </div>
     </div>
@@ -546,10 +523,9 @@ Our method cannot handle motions that are too large/challenging, and doesn't wor
       <h2 class="title">BibTeX</h2>
       <pre><code>
 @misc{saha2023GPD,
-      title={GPD: Ensemble-of-costs-guided Diffusion for Motion Planning}, 
-      author={Kallol Saha and Vishal Mandadi and Jayaram Reddy and Ajit Srikanth and Aditya Agarwal and Bipasha Sen and Arun Singh and Madhava Krishna},
-      year={2023},
-      eprint={2309.11414},
+      title={GPD: Guided Polynomial Diffusion for Motion Planning}, 
+      author={Ajit Srikanth and Parth Mahanjan and Kallol Saha and Vishal Mandadi and Pranjal Paul and Pawan Wadhwani and Brojeshwar Bhowmick and Arun Singh and Madhava Krishna},
+      year={2024},
       archivePrefix={arXiv},
       primaryClass={cs.RO}
 }
