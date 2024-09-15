@@ -1,2 +1,2 @@
-# EDMP
-ICRA24 EDMP project page
+# GPD
+ICRA25 GPD project page
