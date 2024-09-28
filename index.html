@@ -84,7 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <sup>4</sup>University&nbsp;of&nbsp;Tartu </span>
               <!-- <span class="author-block"><sup>2</sup>Cornell Tech, Cornell University &nbsp; </span> -->
             </div>
-
+            <h1 style="font-size:16px">* denotes equal contribution</h1>
             <h1 style="font-size:16px;font-weight:bold">Under Review at ICRA, 2025</h1>
 
             <div class="column has-text-centered">
@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </a>
               </span> -->
                 <span class="link-block">
-                  <a href=""
+                  <a href="https://github.com/guided-polynomial-diffusion/guided-polynomial-diffusion.github.io/blob/main/ICRA25_2910_MS.pdf"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -110,24 +110,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </span>
                 <!-- Video Link. -->
                 <!-- <span class="link-block">
-                  <a href="https://www.youtube.com/embed/F2UI0UNsdjo"
+                  <a href="https://youtu.be/ATf4-c40dwY"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-youtube"></i>
                     </span>
                     <span>Video</span>
                   </a>
-                </span>-->
-                <!-- Supp Link. -->
-                <!--               <span class="link-block">
-                <a href="https://github.com/jayaramreddy10/GPD/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Supp</span>
-                </a>
-              </span> -->
+                </span> -->
+               
                 <!-- Code Link. -->
                 <span class="link-block">
                   <a href="#blank" class="external-link button is-normal is-rounded is-dark">
@@ -137,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span>Code (coming soon) </span>
                   </a>
               </div>
-
+              <h1 style="font-size:16px">Please contact the authors for pre-beta version of the code</h1>
             </div>
           </div>
         </div>
@@ -147,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <section class="hero is-light is-small">
+  <!-- <section class="hero is-light is-small">
     <div class="hero-body">
       <div class="container">
 
@@ -164,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
 
@@ -176,7 +167,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-             Abstract goes here
+              Diffusion-based motion planners are becoming popular due to their well-established performance improvements, stemming from sample diversity and the ease of incorporating new constraints directly during inference.
+              However, a primary limitation of the diffusion process is the requirement for a substantial number of denoising steps, especially when the denoising process is coupled with gradient-based guidance.
+              In this paper, we introduce, for the first time, diffusion in the parametric space of trajectories, where the parameters are represented as Bernstein coefficients.
+              We show that this representation greatly improves the effectiveness of the costfunction guidance and the inference speed. We also introduce
+              a novel stitching algorithm that leverages the diversity in diffusion-generated trajectories to produce collision-free trajectories with just a single cost function-guided model.
+              We demonstrate that our approaches outperform current SOTA diffusion-based motion planners for manipulators and provide an ablation study on key components.
             </p>
           </div>
         </div>
@@ -199,27 +195,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <section class="hero teaser">
         <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <video id="teaser" autoplay muted loop playsinline controls width="99%">
-                <source src="videos/icra_24_single_classifier_24P_h264.mp4" type="video/mp4">
-              </video>
-            </center>
-            <h3 class="subtitle has-text-centered">
-              <font size="-1">
-                <span class="dnerf"> </span>
-                A short visual overview of the paper.
-                <br> *Note that the diffusion happens in the configuration space (7DoF space) but has been shown in the
-                end effector space for better visualisation
-              </font>
-            </h3>
-          </div>
+            <div class="hero-body">
+                <center>
+                    <iframe id="teaser" width="100%" height="100%" 
+                            src="https://www.youtube.com/embed/ATf4-c40dwY?autoplay=1&mute=1&loop=1&playlist=ATf4-c40dwY" 
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </center>
+                <h3 class="subtitle has-text-centered">
+                    <font size="-1">
+                        <span class="dnerf"> </span>
+                        <br> *A short video supplementary of GPD.
+                    </font>
+                </h3>
+            </div>
         </div>
-      </section>
+    </section>
+    
+    
+    
 
 
 
-      <section class="section">
+      <!-- <section class="section">
         <div class="container is-max-desktop">
 
           <div class="columns is-centered has-text-centered">
@@ -298,10 +295,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
     </div>
-  </section>
+  </section> -->
 
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
 
       <div class="columns is-centered has-text-centered">
@@ -378,7 +375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     </div>
     </div>
-  </section>
+  </section> -->
 
 
 
@@ -404,7 +401,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3 class="title is-3">Acknowledgements</h3>
       <div class="content has-text-justified">
         <p>
-          adcEawf
         </p>
       </div>
     </div>
@@ -520,7 +516,7 @@ Our method cannot handle motions that are too large/challenging, and doesn't wor
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-@misc{saha2023GPD,
+@misc{srikanth2024GPD,
       title={GPD: Guided Polynomial Diffusion for Motion Planning}, 
       author={Ajit Srikanth and Parth Mahanjan and Kallol Saha and Vishal Mandadi and Pranjal Paul and Pawan Wadhwani and Brojeshwar Bhowmick and Arun Singh and Madhava Krishna},
       year={2024},
