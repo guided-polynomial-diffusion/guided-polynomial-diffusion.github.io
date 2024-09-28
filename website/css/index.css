@@ -215,3 +215,13 @@ body {
     height: 335px;
     object-fit: cover;
 }
+
+.teaser .container {
+  max-width: 100%; /* Ensures the container can use full width */
+  padding: 0; /* Removes default padding */
+}
+
+#teaser {
+  width: 640px;
+  height: 360px; /* Adjust height as needed */
+}
