@@ -216,8 +216,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="container is-max-desktop">
 
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Bernstein Polynomials</h2>
+          <h2 class="title is-3">What's in GPD?</h2>
         </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                <strong>Trajectory Representation:</strong> We represent trajectories using Bernstein polynomials, enabling smooth trajectories throughout the planning process.
+                <br>
+                <br>
+
+                <strong>Diffusion Over Coefficients:</strong> Instead of performing diffusion directly on the state space, we diffuse over the polynomial coefficients.
+                This ensures smooth trajectories without the need for explicit smoothness costs.
+                Gradients are more effective, as changes at each waypoint impact the entire trajectory, allowing better adherence to constraints while maintaining smoothness.
+                <br>
+                <br>
+                <strong>Leveraging Diversity with Stitching:</strong> We introduce an inference-time algorithm, where, we leverage the diversity in the generated trajectories by stitching the current trajectory to the nearest collision-free trajectory using a local planner when a new collision is detected. This enhances success rates and enables high-speed performance with a single cost function guiding the process.
+              </p>
+            </div>
+          </div>
+        
       </div>
     </section>
 
@@ -225,9 +244,158 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="container is-max-desktop">
 
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Guidance on coefficients</h2>
+          <h2 class="title is-3">Performance Gains in GPD</h2>
 
         </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                <strong>Smaller Model, Shorter Time per Denoising Step</strong> 
+                <br>
+                <ul>
+                  <li>The size of the model and the time to denoise depend on how effectively the diffusion model points to the target data distribution and how the cost function gradients guide the process.</li>
+                </ul>
+                <br>
+                <strong>Better Gradients, Fewer Number of Denoising Steps</strong> 
+                <ul>
+                  <li>In traditional state-space diffusion models, gradients can disturb trajectory structure. In contrast, our approach with Bernstein polynomials ensures gradients preserve smoothness while being collision-free, resulting in more efficient gradient steps.</li>
+                  <li>This reduces the need for a large number of gradient-based diffusion steps, significantly improving speed.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Visualizing the Difference in Gradient Update Rule</h2>
+
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                
+                <ul>
+                  <li>In the state space, gradients disrupt the structure, requiring more steps to correct the trajectory.</li>
+                  <li>In the Bernstein coefficient space, gradients act like pulling a string, preserving the smoothness of the trajectory.</li>
+                </ul>
+                <div class="columns is-centered">
+                  <div class="column is-four-fifths">
+                    <div class="content has-text-centered">
+                      <video width="100%" controls>
+                        <source src="data/videos/state-space_vs_pd.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Visualizing Stitching</h2>
+
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                
+                <!-- <ul>
+                  <li>In the state space, gradients disrupt the structure, requiring more steps to correct the trajectory.</li>
+                  <li>In the Bernstein coefficient space, gradients act like pulling a string, preserving the smoothness of the trajectory.</li>
+                </ul> -->
+                <div class="columns is-centered">
+                  <div class="column is-four-fifths">
+                    <div class="content has-text-centered">
+                      <video width="100%" controls>
+                        <source src="data/videos/stitching.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Experiments</h2>
+
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                
+                <ul>
+                  <li><strong>Static Scene Manipulator Collision Avoidance: </strong>We demonstrate our framework’s success rate against current SOTA methods on challenging static-scene collision-avoidance benchmarks</li>
+                  <li><strong>Dynamic Scene Manipulator Collision Avoidance: </strong>We demonstrate speed improvements in high-speed dynamic manipulator tasks.</li>
+                  <li><strong>Autonomous Driving: </strong>GPD in both real-world autonomous driving scenarios and simulations.</li>
+                  <!-- <li><strong></strong></li> -->
+                </ul>
+                <div class="columns is-centered">
+                  <div class="column is-four-fifths">
+                    <div class="content has-text-centered">
+                      <video width="100%" controls>
+                        <source src="data/videos/reactive_manip.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <video width="100%" controls>
+                        <source src="data/videos/real_ad.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <video width="100%" controls>
+                        <source src="data/videos/real_ad_map.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <video width="100%" controls>
+                        <source src="data/videos/reactive_ad_mix.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <!-- <div class="columns">
+                        <div class="column">
+                          <video width="100%" controls>
+                            <source src="data/videos/real_ad.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div class="column">
+                          <video width="100%" controls>
+                            <source src="data/videos/real_ad_map.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                
+              </p>
+            </div>
+          </div>
       </div>
     </section>
 
